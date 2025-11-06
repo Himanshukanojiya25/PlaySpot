@@ -1,0 +1,15 @@
+Project Overview
+
+Slides Outline:
+1. Title slide: Project name, author, date
+2. High-level summary: purpose, tech stack
+3. Folder structure: tree of project folders and files
+4. Entry points: main.tsx -> App.tsx
+5. Components: list and responsibility (Navbar, Hero, Hero3D, AnimatedSphere, TurfsSection, TurfCard, TurfDetails, BookingModal, Footer, AboutSection)
+6. Data & assets: turfs.json, index.css, images (if any)
+7. Build & scripts: package.json scripts, vite.config.ts, tsconfig
+8. 3D flow diagram: Hero -> Client3DLoader -> Hero3D -> AnimatedSphere (r3f + drei + three)
+9. State flow diagram: App state (selectedTurfId, isDetailsOpen, isBookingOpen) and interactions
+10. Next steps & recommendations: dependency hygiene, bundle optimization, tests/CI
+
+Notes: This is a text outline used to generate a PPTX.

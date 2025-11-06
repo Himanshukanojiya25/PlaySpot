@@ -1,0 +1,12 @@
+digraph G {
+  rankdir=LR;
+  node [shape=box, style=rounded];
+  Hero -> Client3DLoader [label="dynamic import"];
+  Client3DLoader -> Hero3D;
+  Hero3D -> AnimatedSphere;
+  AnimatedSphere -> r3f [label="@react-three/fiber"];
+  AnimatedSphere -> drei [label="@react-three/drei"];
+  r3f -> three [label="three lib"];
+  drei -> three;
+  App -> TurfsSection -> TurfCard -> TurfDetails -> BookingModal;
+}
