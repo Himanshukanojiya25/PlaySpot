@@ -43,7 +43,7 @@ function App() {
       <BookingModal
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
-        turfName={selectedTurf?.name || ''}
+        turf={selectedTurf}
       />
     </div>
   );
