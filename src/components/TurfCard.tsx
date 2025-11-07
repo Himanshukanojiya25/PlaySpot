@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, IndianRupee, Users, Shield } from 'lucide-react';
+import { MapPin, IndianRupee, Users, Shield, Clock } from 'lucide-react';
 
 interface TurfCardProps {
   turf: {
@@ -16,13 +16,52 @@ interface TurfCardProps {
       recommended: number;
     };
     sports: string[];
-    equipmentAvailable: boolean;
+    equipment: {
+      bats: {
+        available: number;
+        total: number;
+        status: "red" | "orange" | "green"; // FIXED: Missing quotes
+        estimatedTime: string;
+      };
+      balls: {
+        available: number;
+        total: number;
+        status: "red" | "orange" | "green"; // FIXED: Missing quotes
+        estimatedTime: string;
+      };
+    };
   };
   onClick: () => void;
   index: number;
 }
 
 export default function TurfCard({ turf, onClick, index }: TurfCardProps) {
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'green': return 'bg-green-500';
+      case 'orange': return 'bg-orange-500';
+      case 'red': return 'bg-red-500';
+      default: return 'bg-gray-500';
+    }
+  };
+
+  const getStatusText = (status: string) => {
+    switch (status) {
+      case 'green': return 'Available';
+      case 'orange': return 'Limited';
+      case 'red': return 'Out of Stock';
+      default: return 'Unknown';
+    }
+  };
+
+  const getOverallEquipmentStatus = () => {
+    if (turf.equipment.bats.status === 'red' || turf.equipment.balls.status === 'red') return 'red';
+    if (turf.equipment.bats.status === 'orange' || turf.equipment.balls.status === 'orange') return 'orange';
+    return 'green';
+  };
+
+  const overallStatus = getOverallEquipmentStatus();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -55,16 +94,36 @@ export default function TurfCard({ turf, onClick, index }: TurfCardProps) {
             <span className="text-white font-semibold text-sm">{turf.pricing.replace('₹', '')}</span>
           </motion.div>
 
-          {/* Equipment Available Badge */}
-          {turf.equipmentAvailable && (
-            <motion.div
-              className="absolute top-4 left-4 bg-green-500/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center space-x-1"
-              whileHover={{ scale: 1.1 }}
-            >
-              <Shield size={14} className="text-white" />
-              <span className="text-white font-semibold text-sm">Bats & Balls</span>
-            </motion.div>
-          )}
+          {/* Equipment Status Badge */}
+          <motion.div
+            className={`absolute top-4 left-4 backdrop-blur-sm px-3 py-1 rounded-full flex items-center space-x-1 ${
+              overallStatus === 'green' 
+                ? 'bg-green-500/90' 
+                : overallStatus === 'orange'
+                ? 'bg-orange-500/90'
+                : 'bg-red-500/90'
+            }`}
+            whileHover={{ scale: 1.1 }}
+          >
+            <Shield size={14} className="text-white" />
+            <span className="text-white font-semibold text-sm">
+              {overallStatus === 'green' ? 'Available' : overallStatus === 'orange' ? 'Limited' : 'Sold Out'}
+            </span>
+          </motion.div>
+
+          {/* Equipment Quick Info */}
+          <div className="absolute bottom-4 left-4 right-4">
+            <div className="flex justify-between items-center text-white text-xs">
+              <div className="flex items-center space-x-2 bg-black/50 backdrop-blur-sm px-2 py-1 rounded">
+                <span>Bats: {turf.equipment.bats.available}/{turf.equipment.bats.total}</span>
+                <div className={`w-2 h-2 rounded-full ${getStatusColor(turf.equipment.bats.status)}`}></div>
+              </div>
+              <div className="flex items-center space-x-2 bg-black/50 backdrop-blur-sm px-2 py-1 rounded">
+                <span>Balls: {turf.equipment.balls.available}/{turf.equipment.balls.total}</span>
+                <div className={`w-2 h-2 rounded-full ${getStatusColor(turf.equipment.balls.status)}`}></div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="relative p-6">
@@ -87,6 +146,40 @@ export default function TurfCard({ turf, onClick, index }: TurfCardProps) {
             </span>
           </div>
 
+          {/* Equipment Availability Details */}
+          <div className="mb-4 space-y-2">
+            <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-400">Bats:</span>
+                <span className={`font-medium ${
+                  turf.equipment.bats.status === 'green' ? 'text-green-400' :
+                  turf.equipment.bats.status === 'orange' ? 'text-orange-400' : 'text-red-400'
+                }`}>
+                  {turf.equipment.bats.available} available
+                </span>
+              </div>
+              <div className="flex items-center space-x-1 text-gray-500">
+                <Clock size={10} />
+                <span>{turf.equipment.bats.estimatedTime}</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-400">Balls:</span>
+                <span className={`font-medium ${
+                  turf.equipment.balls.status === 'green' ? 'text-green-400' :
+                  turf.equipment.balls.status === 'orange' ? 'text-orange-400' : 'text-red-400'
+                }`}>
+                  {turf.equipment.balls.available} available
+                </span>
+              </div>
+              <div className="flex items-center space-x-1 text-gray-500">
+                <Clock size={10} />
+                <span>{turf.equipment.balls.estimatedTime}</span>
+              </div>
+            </div>
+          </div>
+
           {/* Sports Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {turf.sports.map((sport) => (
@@ -98,15 +191,6 @@ export default function TurfCard({ turf, onClick, index }: TurfCardProps) {
               </span>
             ))}
           </div>
-
-          {/* Equipment Availability Note */}
-          {!turf.equipmentAvailable && (
-            <div className="mb-3">
-              <span className="text-orange-400 text-xs bg-orange-500/10 px-2 py-1 rounded border border-orange-500/30">
-                ⚠️ Bring your own equipment
-              </span>
-            </div>
-          )}
 
           <motion.div
             className="mt-2 w-full py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg text-white text-center font-semibold opacity-0 group-hover:opacity-100 transition-opacity"

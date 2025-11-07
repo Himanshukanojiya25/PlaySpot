@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Calendar, Users, Phone, Send, IndianRupee, AlertCircle } from 'lucide-react';
+import { X, Calendar, Users, Phone, Send, IndianRupee, AlertCircle, Shield } from 'lucide-react';
 
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
-  turf?: {  // Made optional with ?
+  turf?: {
     id: string;
     name: string;
     pricePerPerson: number;
@@ -13,6 +13,20 @@ interface BookingModalProps {
       min: number;
       max: number;
       recommended: number;
+    };
+    equipment?: {
+      bats: {
+        available: number;
+        total: number;
+        status: "red" | "orange" | "green";
+        estimatedTime: string;
+      };
+      balls: {
+        available: number;
+        total: number;
+        status: "red" | "orange" | "green";
+        estimatedTime: string;
+      };
     };
   };
 }
@@ -22,11 +36,11 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
     name: '',
     phone: '',
     date: '',
-    peopleCount: turf?.capacity?.recommended || 5, // Safe access
+    peopleCount: turf?.capacity?.recommended || 4, // Updated to 4
   });
 
   // Safe calculations with defaults
-  const capacity = turf?.capacity || { min: 5, max: 20, recommended: 10 };
+  const capacity = turf?.capacity || { min: 4, max: 20, recommended: 10 }; // Updated min to 4
   const pricePerPerson = turf?.pricePerPerson || 200;
   const turfName = turf?.name || 'Turf';
   const totalPrice = formData.peopleCount * pricePerPerson;
@@ -34,7 +48,11 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const message = `Hi! I would like to book *${turfName}*%0A%0A📋 *Booking Details:*%0A👤 Name: ${formData.name}%0A📞 Phone: ${formData.phone}%0A📅 Date: ${formData.date}%0A👥 People: ${formData.peopleCount}%0A💰 Total: ₹${totalPrice}%0A%0A_Booking for ${formData.peopleCount} people at ₹${pricePerPerson}/person_`;
+    const equipmentInfo = turf?.equipment ? 
+      `%0A🏏 *Equipment Status:*%0ABats: ${turf.equipment.bats.available}/${turf.equipment.bats.total} (${turf.equipment.bats.status})%0ABalls: ${turf.equipment.balls.available}/${turf.equipment.balls.total} (${turf.equipment.balls.status})` 
+      : '';
+
+    const message = `Hi! I would like to book *${turfName}*%0A%0A📋 *Booking Details:*%0A👤 Name: ${formData.name}%0A📞 Phone: ${formData.phone}%0A📅 Date: ${formData.date}%0A👥 People: ${formData.peopleCount}%0A💰 Total: ₹${totalPrice}${equipmentInfo}%0A%0A_Booking for ${formData.peopleCount} people at ₹${pricePerPerson}/person_`;
 
     window.open(`https://wa.me/919322663114?text=${message}`, '_blank');
 
@@ -48,7 +66,7 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
   };
 
   const handlePeopleChange = (count: number) => {
-    if (count >= capacity.min && count <= capacity.max) {
+    if (count >= 4 && count <= capacity.max) { // Updated min to 4
       setFormData({ ...formData, peopleCount: count });
     }
   };
@@ -85,6 +103,32 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
               </h2>
               <p className="text-gray-400">Reserve {turfName}</p>
             </div>
+
+            {/* Equipment Status in Booking */}
+            {turf?.equipment && (
+              <div className="mb-4 p-3 bg-slate-800/50 border border-cyan-500/30 rounded-lg">
+                <div className="flex items-center space-x-2 mb-2">
+                  <Shield size={16} className="text-cyan-400" />
+                  <span className="text-white font-semibold text-sm">Current Equipment Status</span>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className={`p-2 rounded ${
+                    turf.equipment.bats.status === 'green' ? 'bg-green-500/20 text-green-400' :
+                    turf.equipment.bats.status === 'orange' ? 'bg-orange-500/20 text-orange-400' :
+                    'bg-red-500/20 text-red-400'
+                  }`}>
+                    Bats: {turf.equipment.bats.available}/{turf.equipment.bats.total}
+                  </div>
+                  <div className={`p-2 rounded ${
+                    turf.equipment.balls.status === 'green' ? 'bg-green-500/20 text-green-400' :
+                    turf.equipment.balls.status === 'orange' ? 'bg-orange-500/20 text-orange-400' :
+                    'bg-red-500/20 text-red-400'
+                  }`}>
+                    Balls: {turf.equipment.balls.available}/{turf.equipment.balls.total}
+                  </div>
+                </div>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -144,7 +188,7 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
                     <button
                       type="button"
                       onClick={() => handlePeopleChange(formData.peopleCount - 1)}
-                      disabled={formData.peopleCount <= capacity.min}
+                      disabled={formData.peopleCount <= 4} // FIXED: Removed comment inside JSX
                       className="w-8 h-8 bg-cyan-500/20 border border-cyan-500/50 rounded-full flex items-center justify-center text-cyan-400 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-cyan-500/30 transition-all"
                     >
                       -
@@ -167,7 +211,7 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
 
                   {/* Capacity Info */}
                   <div className="text-center text-sm text-gray-400">
-                    Capacity: {capacity.min} - {capacity.max} people
+                    Capacity: 4 - {capacity.max} people {/* Updated to 4 */}
                   </div>
 
                   {/* Price Display */}
@@ -186,16 +230,18 @@ export default function BookingModal({ isOpen, onClose, turf }: BookingModalProp
                 </div>
               </div>
 
-              {/* Refund Policy */}
+              {/* Enhanced Refund Policy */}
               <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
                 <div className="flex items-start space-x-2">
                   <AlertCircle size={18} className="text-orange-400 mt-0.5 flex-shrink-0" />
                   <div className="text-sm text-orange-300">
-                    <strong>Refund Policy:</strong> 
+                    <strong>Booking & Refund Policy:</strong> 
                     <ul className="mt-1 space-y-1 text-orange-200/80">
-                      <li>• Full refund if cancelled 24+ hours before</li>
-                      <li>• No refund within 24 hours of booking</li>
-                      <li>• Rain checks available for weather issues</li>
+                      <li>• ✅ Full refund if cancelled 24+ hours before</li>
+                      <li>• ❌ No refund within 24 hours of booking</li>
+                      <li>• 🌧️ Rain checks for weather issues</li>
+                      <li>• 🏏 Equipment charges for damages</li>
+                      <li>• ⏰ Minimum 4 people required</li>
                     </ul>
                   </div>
                 </div>

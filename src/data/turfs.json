@@ -3,27 +3,46 @@
     "id": "1",
     "name": "Elite Sports Arena",
     "tagline": "Where Champions Train",
-    "description": "Experience world-class facilities with our premium artificial turf, professional lighting, and state-of-the-art amenities. Perfect for football, cricket, and multi-sport activities.",
+    "description": "Premium sports facility with international standard turf and professional lighting. Perfect for competitive matches and professional training sessions.",
     "image": "https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "location": "Koramangala, Bangalore",
+    "location": "Sitabuldi, Nagpur",
     "pricing": "₹200/person",
     "pricePerPerson": 200,
     "capacity": {
-      "min": 5,
+      "min": 4,
       "max": 20,
       "recommended": 10
     },
-    "features": ["FIFA Approved Turf", "Flood Lights", "Changing Rooms", "Parking", "Cafeteria"],
+    "features": ["FIFA Approved Turf", "Flood Lights", "Changing Rooms", "Parking", "Cafeteria", "Live Scoreboard"],
     "sports": ["Football", "Cricket", "Basketball"],
-    "equipmentAvailable": true
+    "equipment": {
+      "bats": {
+        "available": 8,
+        "total": 12,
+        "status": "green",
+        "estimatedTime": "Immediate"
+      },
+      "balls": {
+        "available": 15,
+        "total": 25,
+        "status": "green", 
+        "estimatedTime": "Immediate"
+      },
+      "other": {
+        "stumps": 3,
+        "goalPosts": 2,
+        "protectiveGear": 5
+      }
+    },
+    "facilities": ["AC Lounge", "Water Dispenser", "First Aid", "Coach Available", "Video Analysis"]
   },
   {
     "id": "2",
     "name": "Victory Grounds",
     "tagline": "Play Like Never Before",
-    "description": "Modern sports facility featuring premium synthetic grass and professional-grade equipment. Ideal for corporate events, birthday parties, and competitive matches.",
+    "description": "Modern sports facility featuring premium synthetic grass and professional-grade equipment. Ideal for corporate events and friendly matches.",
     "image": "https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "location": "Indiranagar, Bangalore",
+    "location": "Dharampeth, Nagpur",
     "pricing": "₹180/person",
     "pricePerPerson": 180,
     "capacity": {
@@ -31,71 +50,147 @@
       "max": 18,
       "recommended": 8
     },
-    "features": ["Premium Turf", "LED Lighting", "Locker Rooms", "First Aid", "Seating Area"],
+    "features": ["Premium Turf", "LED Lighting", "Locker Rooms", "First Aid", "Seating Area", "Music System"],
     "sports": ["Football", "Volleyball", "Badminton"],
-    "equipmentAvailable": true
+    "equipment": {
+      "bats": {
+        "available": 4,
+        "total": 8,
+        "status": "orange",
+        "estimatedTime": "30 minutes"
+      },
+      "balls": {
+        "available": 8,
+        "total": 15,
+        "status": "orange",
+        "estimatedTime": "30 minutes"
+      },
+      "other": {
+        "stumps": 2,
+        "goalPosts": 1,
+        "protectiveGear": 3
+      }
+    },
+    "facilities": ["Changing Rooms", "Parking", "Snack Counter", "WiFi"]
   },
   {
     "id": "3",
     "name": "Thunder Sports Club",
     "tagline": "Unleash Your Power",
-    "description": "High-performance sports complex with multiple courts and fields. Equipped with advanced drainage systems and weather-resistant surfaces for all-season play.",
+    "description": "High-performance sports complex with multiple courts and advanced facilities. Equipped with weather-resistant surfaces for all-season play.",
     "image": "https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "location": "Whitefield, Bangalore",
+    "location": "Civil Lines, Nagpur",
     "pricing": "₹250/person",
     "pricePerPerson": 250,
     "capacity": {
-      "min": 6,
+      "min": 4,
       "max": 25,
       "recommended": 12
     },
-    "features": ["Multi-Sport Arena", "HD Flood Lights", "VIP Lounges", "Pro Shop", "Coaching Available"],
+    "features": ["Multi-Sport Arena", "HD Flood Lights", "VIP Lounges", "Pro Shop", "Coaching Available", "Tournament Ready"],
     "sports": ["Football", "Cricket", "Tennis", "Basketball"],
-    "equipmentAvailable": false
+    "equipment": {
+      "bats": {
+        "available": 0,
+        "total": 10,
+        "status": "red",
+        "estimatedTime": "2 hours"
+      },
+      "balls": {
+        "available": 2,
+        "total": 20,
+        "status": "red",
+        "estimatedTime": "2 hours"
+      },
+      "other": {
+        "stumps": 1,
+        "goalPosts": 2,
+        "protectiveGear": 2
+      }
+    },
+    "facilities": ["AC Clubhouse", "Gym", "Swimming Pool", "Cafeteria", "Physiotherapist"]
   },
   {
     "id": "4",
     "name": "Phoenix Play Zone",
     "tagline": "Rise and Shine",
-    "description": "Family-friendly sports venue with excellent facilities for casual and competitive play. Features indoor and outdoor options for year-round enjoyment.",
+    "description": "Family-friendly sports venue with excellent facilities for casual and competitive play. Features both indoor and outdoor options.",
     "image": "https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "location": "HSR Layout, Bangalore",
+    "location": "Ramdaspeth, Nagpur",
     "pricing": "₹150/person",
     "pricePerPerson": 150,
     "capacity": {
-      "min": 3,
+      "min": 4,
       "max": 15,
       "recommended": 6
     },
-    "features": ["Hybrid Turf", "Night Lighting", "Shower Facilities", "Free WiFi", "Snack Bar"],
+    "features": ["Hybrid Turf", "Night Lighting", "Shower Facilities", "Free WiFi", "Snack Bar", "Kids Area"],
     "sports": ["Football", "Badminton", "Table Tennis"],
-    "equipmentAvailable": true
+    "equipment": {
+      "bats": {
+        "available": 6,
+        "total": 10,
+        "status": "green",
+        "estimatedTime": "Immediate"
+      },
+      "balls": {
+        "available": 12,
+        "total": 18,
+        "status": "green",
+        "estimatedTime": "Immediate"
+      },
+      "other": {
+        "stumps": 3,
+        "goalPosts": 1,
+        "protectiveGear": 4
+      }
+    },
+    "facilities": ["Family Lounge", "Kids Play Area", "Food Court", "Ample Parking"]
   },
   {
     "id": "5",
     "name": "Legends Sports Hub",
     "tagline": "Create Your Legacy",
-    "description": "Premium destination for sports enthusiasts offering tournament-grade facilities. Host your events or join our thriving sports community.",
+    "description": "Premium destination for sports enthusiasts offering tournament-grade facilities. Perfect for professional training and competitive events.",
     "image": "https://images.pexels.com/photos/1171084/pexels-photo-1171084.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "location": "Electronic City, Bangalore",
+    "location": "Sadar, Nagpur",
     "pricing": "₹300/person",
     "pricePerPerson": 300,
     "capacity": {
-      "min": 8,
+      "min": 4,
       "max": 30,
       "recommended": 15
     },
-    "features": ["Professional Turf", "Smart Lighting", "Gym Access", "Event Hosting", "Live Streaming"],
+    "features": ["Professional Turf", "Smart Lighting", "Gym Access", "Event Hosting", "Live Streaming", "Professional Coaching"],
     "sports": ["Football", "Cricket", "Futsal", "Basketball"],
-    "equipmentAvailable": false
+    "equipment": {
+      "bats": {
+        "available": 10,
+        "total": 15,
+        "status": "green",
+        "estimatedTime": "Immediate"
+      },
+      "balls": {
+        "available": 20,
+        "total": 30,
+        "status": "green",
+        "estimatedTime": "Immediate"
+      },
+      "other": {
+        "stumps": 4,
+        "goalPosts": 3,
+        "protectiveGear": 8
+      }
+    },
+    "facilities": ["VIP Lounge", "Conference Room", "Restaurant", "Sports Shop", "Medical Room"]
   },
   {
     "id": "6",
     "name": "Striker's Paradise",
     "tagline": "Score Your Dreams",
-    "description": "Boutique sports facility with personalized service and attention to detail. Perfect for those who demand excellence in every aspect of their game.",
+    "description": "Boutique sports facility with personalized service and attention to detail. Perfect for those who demand excellence in every aspect.",
     "image": "https://images.pexels.com/photos/2269145/pexels-photo-2269145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "location": "Jayanagar, Bangalore",
+    "location": "Wardha Road, Nagpur",
     "pricing": "₹220/person",
     "pricePerPerson": 220,
     "capacity": {
@@ -103,8 +198,27 @@
       "max": 22,
       "recommended": 10
     },
-    "features": ["Eco-Friendly Turf", "Solar Lighting", "Premium Amenities", "Photography Services", "Online Booking"],
+    "features": ["Eco-Friendly Turf", "Solar Lighting", "Premium Amenities", "Photography Services", "Online Booking", "Personal Trainer"],
     "sports": ["Football", "Hockey", "Rugby"],
-    "equipmentAvailable": true
+    "equipment": {
+      "bats": {
+        "available": 3,
+        "total": 8,
+        "status": "orange",
+        "estimatedTime": "45 minutes"
+      },
+      "balls": {
+        "available": 6,
+        "total": 12,
+        "status": "orange",
+        "estimatedTime": "45 minutes"
+      },
+      "other": {
+        "stumps": 2,
+        "goalPosts": 2,
+        "protectiveGear": 3
+      }
+    },
+    "facilities": ["Luxury Changing Rooms", "Spa", "Video Analysis Room", "Professional Photography"]
   }
 ]
