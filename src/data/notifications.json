@@ -1,0 +1,108 @@
+{
+  "notifications": [
+    {
+      "id": "1",
+      "type": "tournament",
+      "title": "🏆 Cricket Championship 2025",
+      "message": "Register for the annual cricket tournament! Prize pool: ₹50,000",
+      "timestamp": "2025-01-15T10:00:00",
+      "isRead": false,
+      "action": {
+        "label": "Register Now",
+        "url": "/tournaments"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "2", 
+      "type": "offer",
+      "title": "🎯 Special Weekend Offer",
+      "message": "Get 25% off on all weekend bookings. Use code: WEEKEND25",
+      "timestamp": "2025-01-14T09:30:00",
+      "isRead": false,
+      "action": {
+        "label": "Book Now",
+        "url": "/explore"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "3",
+      "type": "live",
+      "title": "⚡ Live Match Update",
+      "message": "Thunder vs Legends match going on at Elite Arena. Watch now!",
+      "timestamp": "2025-01-15T15:45:00", 
+      "isRead": false,
+      "action": {
+        "label": "Watch Live",
+        "url": "/live"
+      },
+      "priority": "high"
+    },
+    {
+      "id": "4",
+      "type": "maintenance",
+      "title": "🔧 Maintenance Alert",
+      "message": "Victory Grounds will be closed for maintenance on Jan 20th",
+      "timestamp": "2025-01-13T14:20:00",
+      "isRead": true,
+      "action": {
+        "label": "View Details",
+        "url": "/maintenance"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "5",
+      "type": "reminder",
+      "title": "🕒 Booking Reminder",
+      "message": "Your booking at Phoenix Play Zone starts in 2 hours",
+      "timestamp": "2025-01-15T08:00:00",
+      "isRead": true,
+      "action": {
+        "label": "View Booking",
+        "url": "/bookings"
+      },
+      "priority": "low"
+    },
+    {
+      "id": "6",
+      "type": "event",
+      "title": "🎪 Sports Fest 2025",
+      "message": "Annual sports festival starting next week with multiple events",
+      "timestamp": "2025-01-12T11:15:00",
+      "isRead": true,
+      "action": {
+        "label": "Learn More", 
+        "url": "/events"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "7",
+      "type": "offer",
+      "title": "💎 Membership Special",
+      "message": "Limited time: Get 3 extra sessions with annual membership",
+      "timestamp": "2025-01-11T16:40:00",
+      "isRead": true,
+      "action": {
+        "label": "View Plans",
+        "url": "/membership"
+      },
+      "priority": "medium"
+    },
+    {
+      "id": "8",
+      "type": "update",
+      "title": "📢 New Turf Added",
+      "message": "Check out our new premium turf 'Champions Arena' now available!",
+      "timestamp": "2025-01-10T13:25:00",
+      "isRead": true,
+      "action": {
+        "label": "Explore",
+        "url": "/explore"
+      },
+      "priority": "low"
+    }
+  ]
+}

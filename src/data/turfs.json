@@ -34,7 +34,21 @@
         "protectiveGear": 5
       }
     },
-    "facilities": ["AC Lounge", "Water Dispenser", "First Aid", "Coach Available", "Video Analysis"]
+    "facilities": ["AC Lounge", "Water Dispenser", "First Aid", "Coach Available", "Video Analysis"],
+    "extension": {
+      "available": true,
+      "baseHourlyRate": 200,
+      "minExtension": 1,
+      "maxExtension": 4,
+      "peakHours": ["18:00", "22:00"],
+      "peakSurcharge": 50,
+      "weekendSurcharge": 100
+    },
+    "damagePolicy": {
+      "requiresDeposit": true,
+      "depositAmount": 500,
+      "damageChargesApply": true
+    }
   },
   {
     "id": "2",
@@ -71,7 +85,21 @@
         "protectiveGear": 3
       }
     },
-    "facilities": ["Changing Rooms", "Parking", "Snack Counter", "WiFi"]
+    "facilities": ["Changing Rooms", "Parking", "Snack Counter", "WiFi"],
+    "extension": {
+      "available": true,
+      "baseHourlyRate": 180,
+      "minExtension": 1,
+      "maxExtension": 3,
+      "peakHours": ["17:00", "21:00"],
+      "peakSurcharge": 40,
+      "weekendSurcharge": 80
+    },
+    "damagePolicy": {
+      "requiresDeposit": true,
+      "depositAmount": 400,
+      "damageChargesApply": true
+    }
   },
   {
     "id": "3",
@@ -108,7 +136,21 @@
         "protectiveGear": 2
       }
     },
-    "facilities": ["AC Clubhouse", "Gym", "Swimming Pool", "Cafeteria", "Physiotherapist"]
+    "facilities": ["AC Clubhouse", "Gym", "Swimming Pool", "Cafeteria", "Physiotherapist"],
+    "extension": {
+      "available": true,
+      "baseHourlyRate": 250,
+      "minExtension": 1,
+      "maxExtension": 5,
+      "peakHours": ["19:00", "23:00"],
+      "peakSurcharge": 60,
+      "weekendSurcharge": 120
+    },
+    "damagePolicy": {
+      "requiresDeposit": true,
+      "depositAmount": 600,
+      "damageChargesApply": true
+    }
   },
   {
     "id": "4",
@@ -145,7 +187,21 @@
         "protectiveGear": 4
       }
     },
-    "facilities": ["Family Lounge", "Kids Play Area", "Food Court", "Ample Parking"]
+    "facilities": ["Family Lounge", "Kids Play Area", "Food Court", "Ample Parking"],
+    "extension": {
+      "available": false,
+      "baseHourlyRate": 150,
+      "minExtension": 0,
+      "maxExtension": 0,
+      "peakHours": [],
+      "peakSurcharge": 0,
+      "weekendSurcharge": 0
+    },
+    "damagePolicy": {
+      "requiresDeposit": false,
+      "depositAmount": 0,
+      "damageChargesApply": true
+    }
   },
   {
     "id": "5",
@@ -182,7 +238,21 @@
         "protectiveGear": 8
       }
     },
-    "facilities": ["VIP Lounge", "Conference Room", "Restaurant", "Sports Shop", "Medical Room"]
+    "facilities": ["VIP Lounge", "Conference Room", "Restaurant", "Sports Shop", "Medical Room"],
+    "extension": {
+      "available": true,
+      "baseHourlyRate": 300,
+      "minExtension": 1,
+      "maxExtension": 6,
+      "peakHours": ["18:00", "24:00"],
+      "peakSurcharge": 75,
+      "weekendSurcharge": 150
+    },
+    "damagePolicy": {
+      "requiresDeposit": true,
+      "depositAmount": 800,
+      "damageChargesApply": true
+    }
   },
   {
     "id": "6",
@@ -219,6 +289,20 @@
         "protectiveGear": 3
       }
     },
-    "facilities": ["Luxury Changing Rooms", "Spa", "Video Analysis Room", "Professional Photography"]
+    "facilities": ["Luxury Changing Rooms", "Spa", "Video Analysis Room", "Professional Photography"],
+    "extension": {
+      "available": true,
+      "baseHourlyRate": 220,
+      "minExtension": 1,
+      "maxExtension": 3,
+      "peakHours": ["17:00", "22:00"],
+      "peakSurcharge": 45,
+      "weekendSurcharge": 90
+    },
+    "damagePolicy": {
+      "requiresDeposit": true,
+      "depositAmount": 450,
+      "damageChargesApply": true
+    }
   }
 ]

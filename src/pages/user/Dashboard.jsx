@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { Calendar, Clock, MapPin, CheckCircle, XCircle, AlertCircle, History } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import { useBooking } from '../../hooks/useBooking';
 import Card from '../../components/ui/Card';
 import Button from '../../components/ui/Button';
 import LoadingSpinner from '../../components/ui/LoadingSpinner';
+import { Link } from 'react-router-dom'; // ADD THIS IMPORT
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -107,15 +108,27 @@ const Dashboard = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8"
         >
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-dark-900 dark:text-dark-50 mb-2">
-            Welcome back, {user?.name || 'User'}!
-          </h1>
-          <p className="text-xl text-dark-600 dark:text-dark-400">
-            Manage your bookings and schedule
-          </p>
+          <div className="flex justify-between items-center">
+            <div>
+              <h1 className="text-4xl md:text-5xl font-display font-bold text-dark-900 dark:text-dark-50 mb-2">
+                Welcome back, {user?.name || 'User'}!
+              </h1>
+              <p className="text-xl text-dark-600 dark:text-dark-400">
+                Manage your bookings and schedule
+              </p>
+            </div>
+            {/* ADD BOOKING HISTORY BUTTON */}
+            <Link 
+              to="/booking-history" 
+              className="flex items-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+            >
+              <History className="w-5 h-5" />
+              Booking History
+            </Link>
+          </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        <div className="grid md:grid-cols-4 gap-6 mb-8"> {/* Changed to 4 columns */}
           <Card padding="lg" className="text-center">
             <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Calendar className="w-8 h-8 text-primary-500" />
@@ -144,6 +157,17 @@ const Dashboard = () => {
               {displayBookings.reduce((sum, b) => sum + (b.amount || 0), 0)}
             </h3>
             <p className="text-dark-600 dark:text-dark-400">Total Spent ($)</p>
+          </Card>
+
+          {/* ADD TOTAL BOOKINGS CARD */}
+          <Card padding="lg" className="text-center">
+            <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <History className="w-8 h-8 text-green-500" />
+            </div>
+            <h3 className="text-3xl font-bold text-dark-900 dark:text-dark-50 mb-2">
+              {displayBookings.length}
+            </h3>
+            <p className="text-dark-600 dark:text-dark-400">Total Bookings</p>
           </Card>
         </div>
 
@@ -175,9 +199,15 @@ const Dashboard = () => {
             </div>
           ) : filteredBookings.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-xl text-dark-600 dark:text-dark-400">
+              <p className="text-xl text-dark-600 dark:text-dark-400 mb-4">
                 No {activeTab} bookings found
               </p>
+              <Link 
+                to="/explore" 
+                className="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors duration-200"
+              >
+                Book a Turf
+              </Link>
             </div>
           ) : (
             <div className="space-y-4">

@@ -1,0 +1,72 @@
+{
+  "bookings": [
+    {
+      "id": "1",
+      "turfId": "1",
+      "turfName": "Elite Sports Arena",
+      "userName": "Raj Sharma",
+      "userAvatar": "👨",
+      "peopleCount": 6,
+      "duration": 2,
+      "timestamp": "2024-01-15T14:30:00Z",
+      "timeAgo": "2 mins ago",
+      "sport": "football"
+    },
+    {
+      "id": "2",
+      "turfId": "2",
+      "turfName": "Nagpur Turf Hub",
+      "userName": "Priya Patel",
+      "userAvatar": "👩",
+      "peopleCount": 4,
+      "duration": 1,
+      "timestamp": "2024-01-15T14:15:00Z",
+      "timeAgo": "17 mins ago",
+      "sport": "cricket"
+    },
+    {
+      "id": "3",
+      "turfId": "3",
+      "turfName": "City Sports Ground",
+      "userName": "Amit Kumar",
+      "userAvatar": "👨",
+      "peopleCount": 8,
+      "duration": 3,
+      "timestamp": "2024-01-15T13:45:00Z",
+      "timeAgo": "47 mins ago",
+      "sport": "football"
+    },
+    {
+      "id": "4",
+      "turfId": "1",
+      "turfName": "Elite Sports Arena",
+      "userName": "Neha Singh",
+      "userAvatar": "👩",
+      "peopleCount": 5,
+      "duration": 2,
+      "timestamp": "2024-01-15T13:20:00Z",
+      "timeAgo": "1 hour ago",
+      "sport": "badminton"
+    },
+    {
+      "id": "5",
+      "turfId": "4",
+      "turfName": "Green Valley Turf",
+      "userName": "Sanjay Verma",
+      "userAvatar": "👨",
+      "peopleCount": 7,
+      "duration": 2,
+      "timestamp": "2024-01-15T12:50:00Z",
+      "timeAgo": "1.5 hours ago",
+      "sport": "football"
+    }
+  ],
+  "popularSlots": [
+    { "time": "06:00-08:00", "bookings": 12, "popularity": "high" },
+    { "time": "16:00-18:00", "bookings": 18, "popularity": "high" },
+    { "time": "18:00-20:00", "bookings": 22, "popularity": "very-high" },
+    { "time": "08:00-10:00", "bookings": 8, "popularity": "medium" },
+    { "time": "14:00-16:00", "bookings": 6, "popularity": "medium" },
+    { "time": "20:00-22:00", "bookings": 15, "popularity": "high" }
+  ]
+}

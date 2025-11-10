@@ -1,0 +1,34 @@
+{
+  "extensionRates": [
+    {
+      "turfId": "1",
+      "turfName": "Elite Cricket Arena",
+      "baseHourlyRate": 200,
+      "minExtension": 1,
+      "maxExtension": 4,
+      "peakHours": ["18:00", "22:00"],
+      "peakSurcharge": 50,
+      "weekendSurcharge": 100
+    },
+    {
+      "turfId": "2",
+      "turfName": "Thunder Sports Ground", 
+      "baseHourlyRate": 180,
+      "minExtension": 1,
+      "maxExtension": 3,
+      "peakHours": ["17:00", "21:00"],
+      "peakSurcharge": 40,
+      "weekendSurcharge": 80
+    },
+    {
+      "turfId": "3",
+      "turfName": "Victory Turf",
+      "baseHourlyRate": 150,
+      "minExtension": 1,
+      "maxExtension": 5,
+      "peakHours": ["19:00", "23:00"],
+      "peakSurcharge": 30,
+      "weekendSurcharge": 60
+    }
+  ]
+}

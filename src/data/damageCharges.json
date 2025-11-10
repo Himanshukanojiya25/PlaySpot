@@ -1,0 +1,60 @@
+{
+  "damageCharges": [
+    {
+      "item": "cricket_bat",
+      "description": "Cricket Bat",
+      "repairCost": 300,
+      "replacementCost": 1500,
+      "partialDamage": 150,
+      "category": "equipment"
+    },
+    {
+      "item": "tennis_ball",
+      "description": "Tennis Ball",
+      "repairCost": 0,
+      "replacementCost": 50,
+      "partialDamage": 0,
+      "category": "consumable"
+    },
+    {
+      "item": "cricket_ball",
+      "description": "Cricket Ball", 
+      "repairCost": 0,
+      "replacementCost": 120,
+      "partialDamage": 0,
+      "category": "consumable"
+    },
+    {
+      "item": "stumps",
+      "description": "Wicket Stumps",
+      "repairCost": 100,
+      "replacementCost": 400,
+      "partialDamage": 50,
+      "category": "equipment"
+    },
+    {
+      "item": "goal_post",
+      "description": "Football Goal Post",
+      "repairCost": 500,
+      "replacementCost": 2000,
+      "partialDamage": 200,
+      "category": "infrastructure"
+    },
+    {
+      "item": "protective_gear",
+      "description": "Protective Gear Set",
+      "repairCost": 200,
+      "replacementCost": 800,
+      "partialDamage": 100,
+      "category": "safety"
+    },
+    {
+      "item": "net_damage",
+      "description": "Boundary Net Damage",
+      "repairCost": 400,
+      "replacementCost": 1200,
+      "partialDamage": 200,
+      "category": "infrastructure"
+    }
+  ]
+}

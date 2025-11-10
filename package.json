@@ -18,10 +18,13 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
     "@supabase/supabase-js": "^2.57.4",
+    "axios": "^1.13.2",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.263.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "react-router-dom": "^7.9.5",
+    "react-toastify": "^11.0.5",
     "three": "^0.180.0"
   },
   "devDependencies": {

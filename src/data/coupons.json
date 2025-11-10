@@ -1,0 +1,75 @@
+{
+  "coupons": [
+    {
+      "code": "WELCOME100",
+      "description": "Get ₹100 off on your first booking",
+      "discountType": "fixed",
+      "discountValue": 100,
+      "minAmount": 0,
+      "maxDiscount": 100,
+      "validFrom": "2024-01-01",
+      "validUntil": "2024-12-31",
+      "usageLimit": 1,
+      "usedCount": 0,
+      "isActive": true,
+      "applicableDays": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+      "isFirstBookingOnly": true
+    },
+    {
+      "code": "SPORTS20",
+      "description": "Get 20% off on any booking",
+      "discountType": "percentage",
+      "discountValue": 20,
+      "minAmount": 300,
+      "maxDiscount": 500,
+      "validFrom": "2024-01-01",
+      "validUntil": "2024-12-31",
+      "usageLimit": 3,
+      "usedCount": 0,
+      "isActive": true,
+      "applicableDays": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    },
+    {
+      "code": "TURF50",
+      "description": "Get ₹50 off on bookings above ₹500",
+      "discountType": "fixed",
+      "discountValue": 50,
+      "minAmount": 500,
+      "maxDiscount": 50,
+      "validFrom": "2024-01-01",
+      "validUntil": "2024-12-31",
+      "usageLimit": 2,
+      "usedCount": 0,
+      "isActive": true,
+      "applicableDays": ["monday", "tuesday", "wednesday", "thursday", "friday"]
+    },
+    {
+      "code": "WEEKEND25",
+      "description": "Get 25% off on weekends",
+      "discountType": "percentage",
+      "discountValue": 25,
+      "minAmount": 400,
+      "maxDiscount": 300,
+      "validFrom": "2024-01-01",
+      "validUntil": "2024-12-31",
+      "usageLimit": 2,
+      "usedCount": 0,
+      "isActive": true,
+      "applicableDays": ["saturday", "sunday"]
+    },
+    {
+      "code": "REFER200",
+      "description": "Get ₹200 off on referral",
+      "discountType": "fixed",
+      "discountValue": 200,
+      "minAmount": 800,
+      "maxDiscount": 200,
+      "validFrom": "2024-01-01",
+      "validUntil": "2024-12-31",
+      "usageLimit": 1,
+      "usedCount": 0,
+      "isActive": true,
+      "applicableDays": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    }
+  ]
+}
